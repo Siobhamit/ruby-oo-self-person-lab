@@ -1,5 +1,5 @@
 class Person
- attr_accessor :bank_account
+ attr_accessor :bank_account, :hygiene, :happiness
  attr_reader :name
 
  
@@ -74,7 +74,7 @@ end
 
 def call_a_friend(friend)
     @happiness += 3
-    fiend.happiness += 3
+    friend.happiness += 3
     return "Hi #{friend.name}! It's #{name}. How are you?"
 end
 
