@@ -1,6 +1,6 @@
 class Person
- attr_accessor :bank_account, :hygiene, :happiness
- attr_reader :name
+ attr_accessor :bank_account
+ attr_reader :name, :hygiene, :happiness
 
  
 
@@ -61,30 +61,30 @@ def get_paid(salary)
 end
 
 def take_bath
-    hygiene=(@hygiene += 4)
+    self.hygiene += 4
     
     return "♪ Rub-a-dub just relaxing in the tub ♫"
 end
 
 def work_out
-@happiness += 2
-@hygiene -= 3
+self.happiness += 2
+self.hygiene -= 3
 return "♪ another one bites the dust ♫"
 end
 
-def call_a_friend(friend)
-    @happiness += 3
+def call_friend(friend)
+    self.happiness += 3
     friend.happiness += 3
     return "Hi #{friend.name}! It's #{name}. How are you?"
 end
 
-def have_a_conversation(friend, topic)
-if topic == "polictics"
-    happiness -= 1
-    friend.happiness -= 1
+def start_conversation(friend, topic)
+if topic == "politics"
+    self.happiness -= 2
+    friend.happiness -= 2
   return "blah blah partisan blah lobbyist"
 elsif topic == "weather"
-    happiness += 1
+    self.happiness += 1
     friend.happiness += 1
         return "blah blah sun blah rain"
   else
